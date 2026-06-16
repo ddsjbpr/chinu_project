@@ -1,6 +1,7 @@
-import os
+from pathlib import Path
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "data", "analytics.db")
+_DB_DIR = Path(__file__).resolve().parent / "data"
+DB_PATH = str(_DB_DIR / "analytics.db")
 APP_TITLE = "Customer Analytics Dashboard"
 SUPPORTED_FILE_TYPES = ["csv", "xlsx"]
 DEFAULT_THEME = "seaborn-v0_8"

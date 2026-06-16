@@ -12,7 +12,13 @@ def get_connection() -> Generator[sqlite3.Connection, None, None]:
 
     Yields a sqlite3.Connection object that auto-commits and closes on exit.
     """
-    conn = sqlite3.connect(DB_PATH)
+    print(f"[db_manager] Database path: {DB_PATH}", flush=True)
+    Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
+    try:
+        conn = sqlite3.connect(DB_PATH)
+    except Exception as e:
+        print(f"[db_manager] Failed to open database at {DB_PATH}: {e}", flush=True)
+        raise
     try:
         yield conn
         conn.commit()

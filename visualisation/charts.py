@@ -52,7 +52,7 @@ def bar_chart(
         ax.set_xlabel(xlabel or x_col)
         ax.set_ylabel(ylabel or y_col)
         if len(data) > 5:
-            ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha="right")
+            ax.tick_params(axis="x", rotation=45)
 
     ax.set_title(title)
     fig.tight_layout()

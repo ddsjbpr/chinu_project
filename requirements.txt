@@ -5,7 +5,3 @@ matplotlib
 seaborn
 openpyxl
 xlrd
-ruff
-mypy
-types-python-dateutil
-types-requests
