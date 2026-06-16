@@ -1,0 +1,4 @@
+ruff
+mypy
+types-python-dateutil
+types-requests
